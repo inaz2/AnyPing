@@ -38,7 +38,7 @@
             this.buttonPing = new System.Windows.Forms.Button();
             this.checkBoxTraceroute = new System.Windows.Forms.CheckBox();
             this.groupBoxResult = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelResult = new System.Windows.Forms.TableLayoutPanel();
             this.labelResultDNS = new System.Windows.Forms.Label();
             this.textBoxResultDNS = new System.Windows.Forms.TextBox();
             this.labelResultICMP = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPort)).BeginInit();
             this.groupBoxResult.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanelResult.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -117,6 +117,8 @@
             this.numericUpDownPort.Name = "numericUpDownPort";
             this.numericUpDownPort.Size = new System.Drawing.Size(78, 27);
             this.numericUpDownPort.TabIndex = 3;
+            this.numericUpDownPort.Enter += new System.EventHandler(this.numericUpDownPort_Enter);
+            this.numericUpDownPort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.numericUpDownPort_MouseUp);
             // 
             // buttonPing
             // 
@@ -142,7 +144,7 @@
             // 
             // groupBoxResult
             // 
-            this.groupBoxResult.Controls.Add(this.tableLayoutPanel1);
+            this.groupBoxResult.Controls.Add(this.tableLayoutPanelResult);
             this.groupBoxResult.Location = new System.Drawing.Point(23, 141);
             this.groupBoxResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBoxResult.Name = "groupBoxResult";
@@ -152,29 +154,29 @@
             this.groupBoxResult.TabStop = false;
             this.groupBoxResult.Text = "Result";
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanelResult
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.labelResultDNS, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxResultDNS, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.labelResultICMP, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxResultICMP, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.labelResultTCP, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxResultTCP, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.labelResultTraceroute, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxResultTraceroute, 1, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 26);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(562, 540);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanelResult.ColumnCount = 2;
+            this.tableLayoutPanelResult.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelResult.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelResult.Controls.Add(this.labelResultDNS, 0, 0);
+            this.tableLayoutPanelResult.Controls.Add(this.textBoxResultDNS, 1, 0);
+            this.tableLayoutPanelResult.Controls.Add(this.labelResultICMP, 0, 1);
+            this.tableLayoutPanelResult.Controls.Add(this.textBoxResultICMP, 1, 1);
+            this.tableLayoutPanelResult.Controls.Add(this.labelResultTCP, 0, 2);
+            this.tableLayoutPanelResult.Controls.Add(this.textBoxResultTCP, 1, 2);
+            this.tableLayoutPanelResult.Controls.Add(this.labelResultTraceroute, 0, 3);
+            this.tableLayoutPanelResult.Controls.Add(this.textBoxResultTraceroute, 1, 3);
+            this.tableLayoutPanelResult.Location = new System.Drawing.Point(6, 26);
+            this.tableLayoutPanelResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tableLayoutPanelResult.Name = "tableLayoutPanelResult";
+            this.tableLayoutPanelResult.RowCount = 4;
+            this.tableLayoutPanelResult.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelResult.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelResult.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelResult.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanelResult.Size = new System.Drawing.Size(562, 540);
+            this.tableLayoutPanelResult.TabIndex = 0;
             // 
             // labelResultDNS
             // 
@@ -242,11 +244,13 @@
             // 
             // textBoxResultTraceroute
             // 
+            this.textBoxResultTraceroute.AcceptsReturn = true;
             this.textBoxResultTraceroute.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxResultTraceroute.Location = new System.Drawing.Point(87, 109);
             this.textBoxResultTraceroute.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxResultTraceroute.Multiline = true;
             this.textBoxResultTraceroute.Name = "textBoxResultTraceroute";
+            this.textBoxResultTraceroute.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxResultTraceroute.Size = new System.Drawing.Size(472, 424);
             this.textBoxResultTraceroute.TabIndex = 7;
             // 
@@ -272,8 +276,8 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPort)).EndInit();
             this.groupBoxResult.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanelResult.ResumeLayout(false);
+            this.tableLayoutPanelResult.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,7 +295,7 @@
         private System.Windows.Forms.Button buttonPing;
         private System.Windows.Forms.CheckBox checkBoxTraceroute;
         private System.Windows.Forms.GroupBox groupBoxResult;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelResult;
         private System.Windows.Forms.Label labelResultDNS;
         private System.Windows.Forms.TextBox textBoxResultDNS;
         private System.Windows.Forms.Label labelResultICMP;
