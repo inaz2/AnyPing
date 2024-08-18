@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Threading.Tasks;
@@ -71,6 +72,8 @@ namespace AnyPing
             await Task.WhenAll(
                 sendICMP(address),
                 sendTCP(address, tcpPort),
+                sendHTTP(address, tcpPort, host, "http"),
+                sendHTTP(address, tcpPort, host, "https"),
                 traceroute(address)
             );
         }
@@ -80,8 +83,18 @@ namespace AnyPing
             IPAddress.TryParse(hostName, out IPAddress address);
             if (address != null)
             {
-                textBoxResultDNS.Text = $"Skip ({address.AddressFamily})";
-                return address;
+                switch (address.AddressFamily)
+                {
+                    case AddressFamily.InterNetwork:
+                        textBoxResultDNS.Text = "Skip (IPv4)";
+                        return address;
+                    case AddressFamily.InterNetworkV6:
+                        textBoxResultDNS.Text = "Skip (IPv6)";
+                        return address;
+                    default:
+                        textBoxResultDNS.Text = "Skip (InvalidAddress)";
+                        return null;
+                }
             }
 
             try
@@ -153,20 +166,99 @@ namespace AnyPing
                 IAsyncResult result = client.BeginConnect(address, tcpPort, null, null);
                 bool isConnected = result.AsyncWaitHandle.WaitOne(PingTimeoutMsec);
                 timer.Stop();
-                if (isConnected)
-                {
-                    client.EndConnect(result);
-                    client.Close();
-                    return $"Success ({timer.ElapsedMilliseconds} ms)";
-                }
-                else
+                if (!isConnected)
                 {
                     client.Close();
                     return "Failure (TimedOut)";
                 }
+
+                try
+                {
+                    client.EndConnect(result);
+                    return $"Success ({timer.ElapsedMilliseconds} ms)";
+                }
+                catch (SocketException ex)
+                {
+                    return $"Failure ({ex.SocketErrorCode})";
+                }
+                finally
+                {
+                    client.Close();
+
+                }
             });
 
             textBoxResultTCP.Text = resultText;
+        }
+
+        private async Task sendHTTP(IPAddress address, int tcpPort, string host, string scheme)
+        {
+            CheckBox checkBox;
+            TextBox textBoxResult;
+            switch (scheme)
+            {
+                case "http":
+                    checkBox = checkBoxHTTP;
+                    textBoxResult = textBoxResultHTTP;
+                    break;
+                case "https":
+                    checkBox = checkBoxHTTPS;
+                    textBoxResult = textBoxResultHTTPS;
+                    break;
+                default:
+                    return;
+            }
+
+            if (!checkBox.Checked)
+            {
+                textBoxResult.Text = "Skip";
+                return;
+            }
+
+            if (tcpPort == 0)
+            {
+                textBoxResult.Text = "Skip";
+                return;
+            }
+            else if (tcpPort < 0 || tcpPort > 65535)
+            {
+                textBoxResult.Text = "Failure (InvalidPortNumber)";
+                return;
+            }
+
+            Uri uri = new UriBuilder(scheme, host, tcpPort).Uri;
+
+            string resultText = await Task.Run(async () =>
+            {
+                HttpClient client = new HttpClient()
+                {
+                    Timeout = TimeSpan.FromMilliseconds(PingTimeoutMsec)
+                };
+                Stopwatch timer = new Stopwatch();
+                timer.Start();
+                try
+                {
+                    HttpResponseMessage responseMessage = await client.GetAsync(uri);
+                    timer.Stop();
+                    return $"Success ({timer.ElapsedMilliseconds} ms)";
+                }
+                catch (HttpRequestException ex) when (ex.InnerException is WebException wex)
+                {
+                    timer.Stop();
+                    return $"Failure ({wex.Status})";
+                }
+                catch (TaskCanceledException)
+                {
+                    timer.Stop();
+                    return $"Failure (TimedOut)";
+                }
+                finally
+                {
+                    client.Dispose();
+                }
+            });
+
+            textBoxResult.Text = resultText;
         }
 
         private async Task traceroute(IPAddress address)

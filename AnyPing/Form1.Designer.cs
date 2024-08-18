@@ -39,6 +39,10 @@
             this.checkBoxTraceroute = new System.Windows.Forms.CheckBox();
             this.groupBoxResult = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelResult = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxResultHTTPS = new System.Windows.Forms.TextBox();
+            this.labelResultHTTPS = new System.Windows.Forms.Label();
+            this.textBoxResultHTTP = new System.Windows.Forms.TextBox();
+            this.labelResultHTTP = new System.Windows.Forms.Label();
             this.labelResultDNS = new System.Windows.Forms.Label();
             this.textBoxResultDNS = new System.Windows.Forms.TextBox();
             this.labelResultICMP = new System.Windows.Forms.Label();
@@ -47,6 +51,8 @@
             this.textBoxResultTCP = new System.Windows.Forms.TextBox();
             this.labelResultTraceroute = new System.Windows.Forms.Label();
             this.textBoxResultTraceroute = new System.Windows.Forms.TextBox();
+            this.checkBoxHTTP = new System.Windows.Forms.CheckBox();
+            this.checkBoxHTTPS = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPort)).BeginInit();
             this.groupBoxResult.SuspendLayout();
@@ -61,7 +67,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(623, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(622, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -91,7 +97,7 @@
             // labelHost
             // 
             this.labelHost.AutoSize = true;
-            this.labelHost.Location = new System.Drawing.Point(33, 62);
+            this.labelHost.Location = new System.Drawing.Point(30, 60);
             this.labelHost.Name = "labelHost";
             this.labelHost.Size = new System.Drawing.Size(40, 20);
             this.labelHost.TabIndex = 1;
@@ -99,7 +105,7 @@
             // 
             // textBoxHostname
             // 
-            this.textBoxHostname.Location = new System.Drawing.Point(79, 59);
+            this.textBoxHostname.Location = new System.Drawing.Point(76, 58);
             this.textBoxHostname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxHostname.Name = "textBoxHostname";
             this.textBoxHostname.Size = new System.Drawing.Size(424, 27);
@@ -107,7 +113,7 @@
             // 
             // numericUpDownPort
             // 
-            this.numericUpDownPort.Location = new System.Drawing.Point(509, 59);
+            this.numericUpDownPort.Location = new System.Drawing.Point(506, 59);
             this.numericUpDownPort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDownPort.Maximum = new decimal(new int[] {
             65535,
@@ -122,7 +128,7 @@
             // 
             // buttonPing
             // 
-            this.buttonPing.Location = new System.Drawing.Point(79, 92);
+            this.buttonPing.Location = new System.Drawing.Point(76, 95);
             this.buttonPing.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonPing.Name = "buttonPing";
             this.buttonPing.Size = new System.Drawing.Size(94, 29);
@@ -134,23 +140,23 @@
             // checkBoxTraceroute
             // 
             this.checkBoxTraceroute.AutoSize = true;
-            this.checkBoxTraceroute.Location = new System.Drawing.Point(179, 95);
+            this.checkBoxTraceroute.Location = new System.Drawing.Point(328, 98);
             this.checkBoxTraceroute.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBoxTraceroute.Name = "checkBoxTraceroute";
             this.checkBoxTraceroute.Size = new System.Drawing.Size(100, 24);
-            this.checkBoxTraceroute.TabIndex = 5;
+            this.checkBoxTraceroute.TabIndex = 7;
             this.checkBoxTraceroute.Text = "Traceroute";
             this.checkBoxTraceroute.UseVisualStyleBackColor = true;
             // 
             // groupBoxResult
             // 
             this.groupBoxResult.Controls.Add(this.tableLayoutPanelResult);
-            this.groupBoxResult.Location = new System.Drawing.Point(23, 141);
+            this.groupBoxResult.Location = new System.Drawing.Point(20, 140);
             this.groupBoxResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBoxResult.Name = "groupBoxResult";
             this.groupBoxResult.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBoxResult.Size = new System.Drawing.Size(576, 581);
-            this.groupBoxResult.TabIndex = 6;
+            this.groupBoxResult.Size = new System.Drawing.Size(580, 640);
+            this.groupBoxResult.TabIndex = 8;
             this.groupBoxResult.TabStop = false;
             this.groupBoxResult.Text = "Result";
             // 
@@ -159,24 +165,66 @@
             this.tableLayoutPanelResult.ColumnCount = 2;
             this.tableLayoutPanelResult.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelResult.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelResult.Controls.Add(this.textBoxResultHTTPS, 1, 4);
+            this.tableLayoutPanelResult.Controls.Add(this.labelResultHTTPS, 0, 4);
+            this.tableLayoutPanelResult.Controls.Add(this.textBoxResultHTTP, 1, 3);
+            this.tableLayoutPanelResult.Controls.Add(this.labelResultHTTP, 0, 3);
             this.tableLayoutPanelResult.Controls.Add(this.labelResultDNS, 0, 0);
             this.tableLayoutPanelResult.Controls.Add(this.textBoxResultDNS, 1, 0);
             this.tableLayoutPanelResult.Controls.Add(this.labelResultICMP, 0, 1);
             this.tableLayoutPanelResult.Controls.Add(this.textBoxResultICMP, 1, 1);
             this.tableLayoutPanelResult.Controls.Add(this.labelResultTCP, 0, 2);
             this.tableLayoutPanelResult.Controls.Add(this.textBoxResultTCP, 1, 2);
-            this.tableLayoutPanelResult.Controls.Add(this.labelResultTraceroute, 0, 3);
-            this.tableLayoutPanelResult.Controls.Add(this.textBoxResultTraceroute, 1, 3);
+            this.tableLayoutPanelResult.Controls.Add(this.labelResultTraceroute, 0, 5);
+            this.tableLayoutPanelResult.Controls.Add(this.textBoxResultTraceroute, 1, 5);
             this.tableLayoutPanelResult.Location = new System.Drawing.Point(6, 26);
             this.tableLayoutPanelResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanelResult.Name = "tableLayoutPanelResult";
-            this.tableLayoutPanelResult.RowCount = 4;
+            this.tableLayoutPanelResult.RowCount = 6;
+            this.tableLayoutPanelResult.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelResult.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelResult.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelResult.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelResult.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelResult.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanelResult.Size = new System.Drawing.Size(562, 540);
+            this.tableLayoutPanelResult.Size = new System.Drawing.Size(568, 607);
             this.tableLayoutPanelResult.TabIndex = 0;
+            // 
+            // textBoxResultHTTPS
+            // 
+            this.textBoxResultHTTPS.Location = new System.Drawing.Point(87, 144);
+            this.textBoxResultHTTPS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxResultHTTPS.Name = "textBoxResultHTTPS";
+            this.textBoxResultHTTPS.Size = new System.Drawing.Size(472, 27);
+            this.textBoxResultHTTPS.TabIndex = 9;
+            // 
+            // labelResultHTTPS
+            // 
+            this.labelResultHTTPS.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelResultHTTPS.AutoSize = true;
+            this.labelResultHTTPS.Location = new System.Drawing.Point(3, 147);
+            this.labelResultHTTPS.Name = "labelResultHTTPS";
+            this.labelResultHTTPS.Size = new System.Drawing.Size(52, 20);
+            this.labelResultHTTPS.TabIndex = 8;
+            this.labelResultHTTPS.Text = "HTTPS";
+            // 
+            // textBoxResultHTTP
+            // 
+            this.textBoxResultHTTP.Location = new System.Drawing.Point(87, 109);
+            this.textBoxResultHTTP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxResultHTTP.Name = "textBoxResultHTTP";
+            this.textBoxResultHTTP.Size = new System.Drawing.Size(472, 27);
+            this.textBoxResultHTTP.TabIndex = 7;
+            // 
+            // labelResultHTTP
+            // 
+            this.labelResultHTTP.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelResultHTTP.AutoSize = true;
+            this.labelResultHTTP.Location = new System.Drawing.Point(3, 112);
+            this.labelResultHTTP.Name = "labelResultHTTP";
+            this.labelResultHTTP.Size = new System.Drawing.Size(44, 20);
+            this.labelResultHTTP.TabIndex = 6;
+            this.labelResultHTTP.Text = "HTTP";
             // 
             // labelResultDNS
             // 
@@ -235,32 +283,56 @@
             // labelResultTraceroute
             // 
             this.labelResultTraceroute.AutoSize = true;
-            this.labelResultTraceroute.Location = new System.Drawing.Point(3, 113);
+            this.labelResultTraceroute.Location = new System.Drawing.Point(3, 183);
             this.labelResultTraceroute.Margin = new System.Windows.Forms.Padding(3, 8, 3, 0);
             this.labelResultTraceroute.Name = "labelResultTraceroute";
             this.labelResultTraceroute.Size = new System.Drawing.Size(78, 20);
-            this.labelResultTraceroute.TabIndex = 6;
+            this.labelResultTraceroute.TabIndex = 10;
             this.labelResultTraceroute.Text = "Traceroute";
             // 
             // textBoxResultTraceroute
             // 
             this.textBoxResultTraceroute.AcceptsReturn = true;
             this.textBoxResultTraceroute.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxResultTraceroute.Location = new System.Drawing.Point(87, 109);
+            this.textBoxResultTraceroute.Location = new System.Drawing.Point(87, 179);
             this.textBoxResultTraceroute.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxResultTraceroute.Multiline = true;
             this.textBoxResultTraceroute.Name = "textBoxResultTraceroute";
             this.textBoxResultTraceroute.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxResultTraceroute.Size = new System.Drawing.Size(472, 424);
-            this.textBoxResultTraceroute.TabIndex = 7;
+            this.textBoxResultTraceroute.TabIndex = 11;
+            // 
+            // checkBoxHTTP
+            // 
+            this.checkBoxHTTP.AutoSize = true;
+            this.checkBoxHTTP.Location = new System.Drawing.Point(176, 98);
+            this.checkBoxHTTP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.checkBoxHTTP.Name = "checkBoxHTTP";
+            this.checkBoxHTTP.Size = new System.Drawing.Size(66, 24);
+            this.checkBoxHTTP.TabIndex = 5;
+            this.checkBoxHTTP.Text = "HTTP";
+            this.checkBoxHTTP.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxHTTPS
+            // 
+            this.checkBoxHTTPS.AutoSize = true;
+            this.checkBoxHTTPS.Location = new System.Drawing.Point(248, 98);
+            this.checkBoxHTTPS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.checkBoxHTTPS.Name = "checkBoxHTTPS";
+            this.checkBoxHTTPS.Size = new System.Drawing.Size(74, 24);
+            this.checkBoxHTTPS.TabIndex = 6;
+            this.checkBoxHTTPS.Text = "HTTPS";
+            this.checkBoxHTTPS.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AcceptButton = this.buttonPing;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 779);
+            this.ClientSize = new System.Drawing.Size(622, 813);
+            this.Controls.Add(this.checkBoxHTTPS);
             this.Controls.Add(this.groupBoxResult);
+            this.Controls.Add(this.checkBoxHTTP);
             this.Controls.Add(this.checkBoxTraceroute);
             this.Controls.Add(this.buttonPing);
             this.Controls.Add(this.numericUpDownPort);
@@ -304,6 +376,12 @@
         private System.Windows.Forms.TextBox textBoxResultTCP;
         private System.Windows.Forms.Label labelResultTraceroute;
         private System.Windows.Forms.TextBox textBoxResultTraceroute;
+        private System.Windows.Forms.CheckBox checkBoxHTTPS;
+        private System.Windows.Forms.CheckBox checkBoxHTTP;
+        private System.Windows.Forms.TextBox textBoxResultHTTPS;
+        private System.Windows.Forms.Label labelResultHTTPS;
+        private System.Windows.Forms.TextBox textBoxResultHTTP;
+        private System.Windows.Forms.Label labelResultHTTP;
     }
 }
 
