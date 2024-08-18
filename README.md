@@ -2,7 +2,7 @@
 
 A tiny network diagnostic tool for Windows.
 
-![screenshot](screenshot-v1.0.0.0.png)
+![screenshot](screenshot-v1.1.0.0.png)
 
 
 ## System Requirements
@@ -16,4 +16,6 @@ A tiny network diagnostic tool for Windows.
 * DNS lookup
 * ICMP Ping
 * TCP Ping
+* HTTP Ping (using system proxy settings)
+* HTTPS Ping (using system proxy settings)
 * ICMP Traceroute
