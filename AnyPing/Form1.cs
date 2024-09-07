@@ -240,12 +240,27 @@ namespace AnyPing
                 {
                     HttpResponseMessage responseMessage = await client.GetAsync(uri);
                     timer.Stop();
-                    return $"Success ({timer.ElapsedMilliseconds} ms)";
+                    if (responseMessage.IsSuccessStatusCode)
+                    {
+                        return $"Success ({timer.ElapsedMilliseconds} ms; {(int)responseMessage.StatusCode} {responseMessage.ReasonPhrase})";
+                    }
+                    else
+                    {
+                        return $"Failure ({(int)responseMessage.StatusCode} {responseMessage.ReasonPhrase})";
+                    }
                 }
                 catch (HttpRequestException ex) when (ex.InnerException is WebException wex)
                 {
                     timer.Stop();
-                    return $"Failure ({wex.Status})";
+                    if (wex.Response is HttpWebResponse)
+                    {
+                        HttpWebResponse response = (HttpWebResponse)wex.Response;
+                        return $"Failure ({(int)response.StatusCode} {response.StatusDescription})";
+                    }
+                    else
+                    {
+                        return $"Failure ({wex.Status})";
+                    }
                 }
                 catch (TaskCanceledException)
                 {
