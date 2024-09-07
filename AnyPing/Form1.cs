@@ -109,6 +109,11 @@ namespace AnyPing
                 textBoxResultDNS.Text = $"Failure ({ex.SocketErrorCode.ToString("g")})";
                 return null;
             }
+            catch (Exception ex)
+            {
+                textBoxResultDNS.Text = $"Failure ({ex.GetType().Name})";
+                return null;
+            }
         }
         private async Task sendICMP(IPAddress address)
         {
@@ -140,6 +145,10 @@ namespace AnyPing
             catch (PingException)
             {
                 resultText = "Failure (PingException)";
+            }
+            catch (Exception ex)
+            {
+                resultText = $"Failure ({ex.GetType().Name})";
             }
 
             textBoxResultICMP.Text = resultText;
@@ -180,6 +189,10 @@ namespace AnyPing
                 catch (SocketException ex)
                 {
                     return $"Failure ({ex.SocketErrorCode})";
+                }
+                catch (Exception ex)
+                {
+                    return $"Failure ({ex.GetType().Name})";
                 }
                 finally
                 {
@@ -267,6 +280,11 @@ namespace AnyPing
                     timer.Stop();
                     return $"Failure (TimedOut)";
                 }
+                catch (Exception ex)
+                {
+                    timer.Stop();
+                    return $"Failure ({ex.GetType().Name})";
+                }
                 finally
                 {
                     client.Dispose();
@@ -339,6 +357,12 @@ namespace AnyPing
                 catch (PingException)
                 {
                     resultText = $"{colTtl.PadLeft(3, ' ')}  Failure (PingException)";
+                    textBoxResultTraceroute.AppendText(resultText + "\r\n");
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    resultText = $"{colTtl.PadLeft(3, ' ')}  Failure ({ex.GetType().Name})";
                     textBoxResultTraceroute.AppendText(resultText + "\r\n");
                     return;
                 }
