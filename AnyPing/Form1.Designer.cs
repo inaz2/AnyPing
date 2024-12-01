@@ -140,7 +140,7 @@
             this.buttonPing.Location = new System.Drawing.Point(76, 95);
             this.buttonPing.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonPing.Name = "buttonPing";
-            this.buttonPing.Size = new System.Drawing.Size(94, 29);
+            this.buttonPing.Size = new System.Drawing.Size(100, 33);
             this.buttonPing.TabIndex = 4;
             this.buttonPing.Text = "Ping";
             this.buttonPing.UseVisualStyleBackColor = true;
@@ -149,7 +149,7 @@
             // checkBoxTraceroute
             // 
             this.checkBoxTraceroute.AutoSize = true;
-            this.checkBoxTraceroute.Location = new System.Drawing.Point(328, 98);
+            this.checkBoxTraceroute.Location = new System.Drawing.Point(343, 100);
             this.checkBoxTraceroute.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBoxTraceroute.Name = "checkBoxTraceroute";
             this.checkBoxTraceroute.Size = new System.Drawing.Size(100, 24);
@@ -314,7 +314,7 @@
             // checkBoxHTTP
             // 
             this.checkBoxHTTP.AutoSize = true;
-            this.checkBoxHTTP.Location = new System.Drawing.Point(176, 98);
+            this.checkBoxHTTP.Location = new System.Drawing.Point(191, 100);
             this.checkBoxHTTP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBoxHTTP.Name = "checkBoxHTTP";
             this.checkBoxHTTP.Size = new System.Drawing.Size(66, 24);
@@ -325,7 +325,7 @@
             // checkBoxHTTPS
             // 
             this.checkBoxHTTPS.AutoSize = true;
-            this.checkBoxHTTPS.Location = new System.Drawing.Point(248, 98);
+            this.checkBoxHTTPS.Location = new System.Drawing.Point(263, 100);
             this.checkBoxHTTPS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBoxHTTPS.Name = "checkBoxHTTPS";
             this.checkBoxHTTPS.Size = new System.Drawing.Size(74, 24);

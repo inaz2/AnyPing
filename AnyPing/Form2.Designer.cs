@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.numericUpDownTracerouteMaxHops = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDownTracerouteTimeoutMsec = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
             this.numericUpDownPingTimeoutMsec = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -44,89 +40,31 @@
             this.buttonApply = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.numericUpDownTracerouteMaxHops = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericUpDownTracerouteTimeoutMsec = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTracerouteMaxHops)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTracerouteTimeoutMsec)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPingTimeoutMsec)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTracerouteMaxHops)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTracerouteTimeoutMsec)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.numericUpDownTracerouteMaxHops);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.numericUpDownTracerouteTimeoutMsec);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.numericUpDownPingTimeoutMsec);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(27, 12);
+            this.groupBox1.Location = new System.Drawing.Point(27, 16);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(450, 125);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(440, 77);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "全般";
-            // 
-            // numericUpDownTracerouteMaxHops
-            // 
-            this.numericUpDownTracerouteMaxHops.Location = new System.Drawing.Point(292, 84);
-            this.numericUpDownTracerouteMaxHops.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownTracerouteMaxHops.Name = "numericUpDownTracerouteMaxHops";
-            this.numericUpDownTracerouteMaxHops.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDownTracerouteMaxHops.TabIndex = 5;
-            this.numericUpDownTracerouteMaxHops.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 86);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(199, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "ICMP Traceroute 最大ホップ数";
-            // 
-            // numericUpDownTracerouteTimeoutMsec
-            // 
-            this.numericUpDownTracerouteTimeoutMsec.Increment = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDownTracerouteTimeoutMsec.Location = new System.Drawing.Point(292, 56);
-            this.numericUpDownTracerouteTimeoutMsec.Maximum = new decimal(new int[] {
-            60000,
-            0,
-            0,
-            0});
-            this.numericUpDownTracerouteTimeoutMsec.Minimum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDownTracerouteTimeoutMsec.Name = "numericUpDownTracerouteTimeoutMsec";
-            this.numericUpDownTracerouteTimeoutMsec.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDownTracerouteTimeoutMsec.TabIndex = 3;
-            this.numericUpDownTracerouteTimeoutMsec.Value = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(267, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "ICMP Traceroute タイムアウト時間（ミリ秒）";
             // 
             // numericUpDownPingTimeoutMsec
             // 
@@ -135,7 +73,8 @@
             0,
             0,
             0});
-            this.numericUpDownPingTimeoutMsec.Location = new System.Drawing.Point(292, 28);
+            this.numericUpDownPingTimeoutMsec.Location = new System.Drawing.Point(292, 31);
+            this.numericUpDownPingTimeoutMsec.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDownPingTimeoutMsec.Maximum = new decimal(new int[] {
             60000,
             0,
@@ -147,7 +86,7 @@
             0,
             0});
             this.numericUpDownPingTimeoutMsec.Name = "numericUpDownPingTimeoutMsec";
-            this.numericUpDownPingTimeoutMsec.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownPingTimeoutMsec.Size = new System.Drawing.Size(120, 27);
             this.numericUpDownPingTimeoutMsec.TabIndex = 1;
             this.numericUpDownPingTimeoutMsec.Value = new decimal(new int[] {
             2000,
@@ -158,9 +97,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 30);
+            this.label1.Location = new System.Drawing.Point(19, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 15);
+            this.label1.Size = new System.Drawing.Size(171, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "タイムアウト時間（ミリ秒）";
             // 
@@ -171,36 +110,41 @@
             this.groupBox2.Controls.Add(this.checkBoxSendProxyCredential);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(27, 143);
+            this.groupBox2.Location = new System.Drawing.Point(27, 234);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(450, 125);
-            this.groupBox2.TabIndex = 1;
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Size = new System.Drawing.Size(440, 167);
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "HTTPプロキシ";
             // 
             // textBoxProxyUsername
             // 
             this.textBoxProxyUsername.Enabled = false;
-            this.textBoxProxyUsername.Location = new System.Drawing.Point(89, 55);
+            this.textBoxProxyUsername.Location = new System.Drawing.Point(89, 73);
+            this.textBoxProxyUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxProxyUsername.Name = "textBoxProxyUsername";
-            this.textBoxProxyUsername.Size = new System.Drawing.Size(323, 22);
+            this.textBoxProxyUsername.Size = new System.Drawing.Size(323, 27);
             this.textBoxProxyUsername.TabIndex = 2;
             // 
             // textBoxProxyPassword
             // 
             this.textBoxProxyPassword.Enabled = false;
-            this.textBoxProxyPassword.Location = new System.Drawing.Point(89, 83);
+            this.textBoxProxyPassword.Location = new System.Drawing.Point(89, 111);
+            this.textBoxProxyPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxProxyPassword.Name = "textBoxProxyPassword";
             this.textBoxProxyPassword.PasswordChar = '*';
-            this.textBoxProxyPassword.Size = new System.Drawing.Size(323, 22);
+            this.textBoxProxyPassword.Size = new System.Drawing.Size(323, 27);
             this.textBoxProxyPassword.TabIndex = 4;
             // 
             // checkBoxSendProxyCredential
             // 
             this.checkBoxSendProxyCredential.AutoSize = true;
-            this.checkBoxSendProxyCredential.Location = new System.Drawing.Point(22, 27);
+            this.checkBoxSendProxyCredential.Location = new System.Drawing.Point(22, 36);
+            this.checkBoxSendProxyCredential.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBoxSendProxyCredential.Name = "checkBoxSendProxyCredential";
-            this.checkBoxSendProxyCredential.Size = new System.Drawing.Size(154, 19);
+            this.checkBoxSendProxyCredential.Size = new System.Drawing.Size(155, 24);
             this.checkBoxSendProxyCredential.TabIndex = 0;
             this.checkBoxSendProxyCredential.Text = "認証情報を送信する";
             this.checkBoxSendProxyCredential.UseVisualStyleBackColor = true;
@@ -209,71 +153,158 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 86);
+            this.label4.Location = new System.Drawing.Point(19, 115);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 15);
+            this.label4.Size = new System.Drawing.Size(64, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "パスワード";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 58);
+            this.label5.Location = new System.Drawing.Point(19, 77);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 15);
+            this.label5.Size = new System.Drawing.Size(58, 20);
             this.label5.TabIndex = 1;
             this.label5.Text = "ユーザ名";
             // 
             // buttonApply
             // 
-            this.buttonApply.Location = new System.Drawing.Point(108, 284);
+            this.buttonApply.Location = new System.Drawing.Point(87, 418);
+            this.buttonApply.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonApply.Name = "buttonApply";
-            this.buttonApply.Size = new System.Drawing.Size(75, 29);
-            this.buttonApply.TabIndex = 2;
+            this.buttonApply.Size = new System.Drawing.Size(100, 33);
+            this.buttonApply.TabIndex = 3;
             this.buttonApply.Text = "適用";
             this.buttonApply.UseVisualStyleBackColor = true;
             this.buttonApply.Click += new System.EventHandler(this.buttonApply_Click);
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(308, 284);
+            this.buttonCancel.Location = new System.Drawing.Point(299, 418);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 29);
-            this.buttonCancel.TabIndex = 4;
+            this.buttonCancel.Size = new System.Drawing.Size(100, 33);
+            this.buttonCancel.TabIndex = 5;
             this.buttonCancel.Text = "キャンセル";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonReset
             // 
-            this.buttonReset.Location = new System.Drawing.Point(208, 284);
+            this.buttonReset.Location = new System.Drawing.Point(193, 418);
+            this.buttonReset.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(75, 29);
-            this.buttonReset.TabIndex = 3;
+            this.buttonReset.Size = new System.Drawing.Size(100, 33);
+            this.buttonReset.TabIndex = 4;
             this.buttonReset.Text = "リセット";
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.numericUpDownTracerouteMaxHops);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.numericUpDownTracerouteTimeoutMsec);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Location = new System.Drawing.Point(27, 104);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox3.Size = new System.Drawing.Size(440, 119);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "ICMP Traceroute";
+            // 
+            // numericUpDownTracerouteMaxHops
+            // 
+            this.numericUpDownTracerouteMaxHops.Location = new System.Drawing.Point(291, 72);
+            this.numericUpDownTracerouteMaxHops.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numericUpDownTracerouteMaxHops.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownTracerouteMaxHops.Name = "numericUpDownTracerouteMaxHops";
+            this.numericUpDownTracerouteMaxHops.Size = new System.Drawing.Size(120, 27);
+            this.numericUpDownTracerouteMaxHops.TabIndex = 3;
+            this.numericUpDownTracerouteMaxHops.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "最大ホップ数";
+            // 
+            // numericUpDownTracerouteTimeoutMsec
+            // 
+            this.numericUpDownTracerouteTimeoutMsec.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDownTracerouteTimeoutMsec.Location = new System.Drawing.Point(291, 35);
+            this.numericUpDownTracerouteTimeoutMsec.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numericUpDownTracerouteTimeoutMsec.Maximum = new decimal(new int[] {
+            60000,
+            0,
+            0,
+            0});
+            this.numericUpDownTracerouteTimeoutMsec.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDownTracerouteTimeoutMsec.Name = "numericUpDownTracerouteTimeoutMsec";
+            this.numericUpDownTracerouteTimeoutMsec.Size = new System.Drawing.Size(120, 27);
+            this.numericUpDownTracerouteTimeoutMsec.TabIndex = 1;
+            this.numericUpDownTracerouteTimeoutMsec.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(171, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "タイムアウト時間（ミリ秒）";
+            // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 333);
+            this.ClientSize = new System.Drawing.Size(496, 477);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonApply);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form2";
             this.Text = "オプション";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTracerouteMaxHops)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTracerouteTimeoutMsec)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPingTimeoutMsec)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTracerouteMaxHops)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTracerouteTimeoutMsec)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -282,11 +313,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDownTracerouteTimeoutMsec;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDownPingTimeoutMsec;
-        private System.Windows.Forms.NumericUpDown numericUpDownTracerouteMaxHops;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox checkBoxSendProxyCredential;
         private System.Windows.Forms.Label label4;
@@ -296,5 +323,10 @@
         private System.Windows.Forms.Button buttonApply;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.NumericUpDown numericUpDownTracerouteMaxHops;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown numericUpDownTracerouteTimeoutMsec;
+        private System.Windows.Forms.Label label2;
     }
 }
