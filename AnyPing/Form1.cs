@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnyPing.utils;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
@@ -12,13 +13,14 @@ namespace AnyPing
 {
     public partial class Form1 : Form
     {
-        private int PingTimeoutMsec = Properties.Settings.Default.PingTimeoutMsec;
-        private int TracerouteTimeoutMsec = Properties.Settings.Default.TracerouteTimeoutMsec;
-        private int TracerouteMaxHops = Properties.Settings.Default.TracerouteMaxHops;
-
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Configuration.Validate();
         }
 
         private void numericUpDownPort_Enter(object sender, EventArgs e)
@@ -29,6 +31,12 @@ namespace AnyPing
         private void numericUpDownPort_MouseUp(object sender, MouseEventArgs e)
         {
             numericUpDownPort.Select(0, numericUpDownPort.Value.ToString().Length);
+        }
+
+        private void オプションOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
         }
 
         private void バージョン情報VToolStripMenuItem_Click(object sender, EventArgs e)
@@ -132,7 +140,7 @@ namespace AnyPing
             Ping ping = new Ping();
             try
             {
-                PingReply reply = await ping.SendPingAsync(address, PingTimeoutMsec);
+                PingReply reply = await ping.SendPingAsync(address, Configuration.PingTimeoutMsec);
                 if (reply.Status == IPStatus.Success)
                 {
                     resultText = $"Success ({reply.RoundtripTime} ms)";
@@ -173,7 +181,7 @@ namespace AnyPing
                 Stopwatch timer = new Stopwatch();
                 timer.Start();
                 IAsyncResult result = client.BeginConnect(address, tcpPort, null, null);
-                bool isConnected = result.AsyncWaitHandle.WaitOne(PingTimeoutMsec);
+                bool isConnected = result.AsyncWaitHandle.WaitOne(Configuration.PingTimeoutMsec);
                 timer.Stop();
                 if (!isConnected)
                 {
@@ -243,10 +251,7 @@ namespace AnyPing
 
             string resultText = await Task.Run(async () =>
             {
-                HttpClient client = new HttpClient()
-                {
-                    Timeout = TimeSpan.FromMilliseconds(PingTimeoutMsec)
-                };
+                HttpClient client = CustomHTTPClient.Create(Configuration.PingTimeoutMsec);
                 Stopwatch timer = new Stopwatch();
                 timer.Start();
                 try
@@ -314,7 +319,7 @@ namespace AnyPing
             }
 
             Ping ping = new Ping();
-            for (int i = 0; i < TracerouteMaxHops; i++)
+            for (int i = 0; i < Configuration.TracerouteMaxHops; i++)
             {
                 PingOptions options = new PingOptions();
                 options.Ttl = i + 1;
@@ -327,7 +332,7 @@ namespace AnyPing
                 {
                     Stopwatch timer = new Stopwatch();
                     timer.Start();
-                    PingReply reply = await ping.SendPingAsync(address, TracerouteTimeoutMsec, buffer, options);
+                    PingReply reply = await ping.SendPingAsync(address, Configuration.TracerouteTimeoutMsec, buffer, options);
                     timer.Stop();
                     string elapsedMsecs = timer.ElapsedMilliseconds.ToString().PadLeft(4, ' ');
 

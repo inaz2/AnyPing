@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ウィンドウWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.オプションOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.バージョン情報VToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.終了XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelHost = new System.Windows.Forms.Label();
@@ -74,11 +75,19 @@
             // ウィンドウWToolStripMenuItem
             // 
             this.ウィンドウWToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.オプションOToolStripMenuItem,
             this.バージョン情報VToolStripMenuItem,
             this.終了XToolStripMenuItem});
             this.ウィンドウWToolStripMenuItem.Name = "ウィンドウWToolStripMenuItem";
             this.ウィンドウWToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
             this.ウィンドウWToolStripMenuItem.Text = "ウィンドウ (&W)";
+            // 
+            // オプションOToolStripMenuItem
+            // 
+            this.オプションOToolStripMenuItem.Name = "オプションOToolStripMenuItem";
+            this.オプションOToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
+            this.オプションOToolStripMenuItem.Text = "オプション (&O)...";
+            this.オプションOToolStripMenuItem.Click += new System.EventHandler(this.オプションOToolStripMenuItem_Click);
             // 
             // バージョン情報VToolStripMenuItem
             // 
@@ -344,6 +353,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "AnyPing";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPort)).EndInit();
@@ -382,6 +392,7 @@
         private System.Windows.Forms.Label labelResultHTTPS;
         private System.Windows.Forms.TextBox textBoxResultHTTP;
         private System.Windows.Forms.Label labelResultHTTP;
+        private System.Windows.Forms.ToolStripMenuItem オプションOToolStripMenuItem;
     }
 }
 

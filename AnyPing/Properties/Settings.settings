@@ -11,5 +11,14 @@
     <Setting Name="TracerouteMaxHops" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20</Value>
     </Setting>
+    <Setting Name="SendProxyCredential" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ProxyUsername" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ProxyPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>
