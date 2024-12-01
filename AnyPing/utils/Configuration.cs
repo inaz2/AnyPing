@@ -18,10 +18,12 @@ namespace AnyPing.utils
 
         public static int PingTimeoutMsec
         {
-            get {
+            get
+            {
                 return Properties.Settings.Default.PingTimeoutMsec;
             }
-            set {
+            set
+            {
                 Properties.Settings.Default.PingTimeoutMsec = Conversion.Clamp(value, DefPingTimeoutMsec[0], DefPingTimeoutMsec[1]);
             }
         }
@@ -58,7 +60,7 @@ namespace AnyPing.utils
             }
             set
             {
-                Properties.Settings.Default.SendProxyCredential = (bool)value;
+                Properties.Settings.Default.SendProxyCredential = value;
             }
         }
 

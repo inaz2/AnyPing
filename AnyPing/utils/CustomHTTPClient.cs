@@ -12,7 +12,8 @@ namespace AnyPing.utils
 {
     internal class CustomHTTPClient
     {
-        public static HttpClient Create(int timeoutMsec) {
+        public static HttpClient Create(int timeoutMsec)
+        {
             HttpClientHandler handler = new HttpClientHandler();
 
             if (Configuration.SendProxyCredential)
@@ -24,6 +25,7 @@ namespace AnyPing.utils
             {
                 Timeout = TimeSpan.FromMilliseconds(timeoutMsec)
             };
+
             return client;
         }
     }
