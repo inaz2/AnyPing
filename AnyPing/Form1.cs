@@ -123,6 +123,7 @@ namespace AnyPing
                 return null;
             }
         }
+
         private async Task sendICMP(IPAddress address)
         {
             if (address.Equals(IPAddress.Any))
@@ -319,55 +320,63 @@ namespace AnyPing
             }
 
             Ping ping = new Ping();
+            PingOptions options = new PingOptions();
+
+            byte[] buffer = new byte[64];
+
             for (int i = 0; i < Configuration.TracerouteMaxHops; i++)
             {
-                PingOptions options = new PingOptions();
                 options.Ttl = i + 1;
-                string colTtl = options.Ttl.ToString().PadLeft(3, ' ');
-
-                byte[] buffer = new byte[64];
 
                 string resultText;
+                string strElapsedMsecs;
                 try
                 {
                     Stopwatch timer = new Stopwatch();
                     timer.Start();
                     PingReply reply = await ping.SendPingAsync(address, Configuration.TracerouteTimeoutMsec, buffer, options);
                     timer.Stop();
-                    string elapsedMsecs = timer.ElapsedMilliseconds.ToString().PadLeft(4, ' ');
+                    if (timer.ElapsedMilliseconds < 1)
+                    {
+                        strElapsedMsecs = "<1";
+                    }
+                    else
+                    {
+                        strElapsedMsecs = timer.ElapsedMilliseconds.ToString();
+                    }
 
                     if (reply.Status == IPStatus.Success)
                     {
-                        resultText = $"{colTtl}  {elapsedMsecs} ms  {reply.Address}";
+                        resultText = $"{options.Ttl,3}  {strElapsedMsecs,4} ms  {reply.Address}";
                         textBoxResultTraceroute.AppendText(resultText + "\r\n");
                         break;
                     }
                     else if (reply.Status == IPStatus.TtlExpired)
                     {
-                        resultText = $"{colTtl}  {elapsedMsecs} ms  {reply.Address}";
+                        resultText = $"{options.Ttl,3}  {strElapsedMsecs,4} ms  {reply.Address}";
                         textBoxResultTraceroute.AppendText(resultText + "\r\n");
                     }
                     else if (reply.Status == IPStatus.TimedOut)
                     {
-                        resultText = $"{colTtl}     *     Request timed out.";
+                        resultText = $"{options.Ttl,3}     *     Request timed out.";
                         textBoxResultTraceroute.AppendText(resultText + "\r\n");
                     }
                     else
                     {
-                        resultText = $"{colTtl}  Failure ({reply.Status.ToString("g")})";
+                        resultText = $"{options.Ttl,3}  Failure ({reply.Status.ToString("g")})";
                         textBoxResultTraceroute.AppendText(resultText + "\r\n");
                         return;
                     }
                 }
                 catch (PingException)
                 {
-                    resultText = $"{colTtl.PadLeft(3, ' ')}  Failure (PingException)";
+                    resultText = $"{options.Ttl,3}  Failure (PingException)";
                     textBoxResultTraceroute.AppendText(resultText + "\r\n");
                     return;
                 }
                 catch (Exception ex)
                 {
-                    resultText = $"{colTtl.PadLeft(3, ' ')}  Failure ({ex.GetType().Name})";
+                    resultText = $"{options.Ttl,3}  Failure ({ex.GetType().Name})";
                     textBoxResultTraceroute.AppendText(resultText + "\r\n");
                     return;
                 }
