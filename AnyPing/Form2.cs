@@ -28,7 +28,12 @@ namespace AnyPing
             numericUpDownTracerouteMaxHops.Minimum = Configuration.DefTracerouteMaxHops[0];
             numericUpDownTracerouteMaxHops.Maximum = Configuration.DefTracerouteMaxHops[1];
 
-            LoadConfiguration();
+            numericUpDownPingTimeoutMsec.Value = Configuration.PingTimeoutMsec;
+            numericUpDownTracerouteTimeoutMsec.Value = Configuration.TracerouteTimeoutMsec;
+            numericUpDownTracerouteMaxHops.Value = Configuration.TracerouteMaxHops;
+            checkBoxSendProxyCredential.Checked = Configuration.SendProxyCredential;
+            textBoxProxyUsername.Text = Configuration.ProxyUsername;
+            textBoxProxyPassword.Text = Configuration.ProxyPassword;
         }
 
         private void checkBoxSendProxyCredential_CheckedChanged(object sender, EventArgs e)
@@ -54,24 +59,17 @@ namespace AnyPing
 
         private void buttonReset_Click(object sender, EventArgs e)
         {
-            Configuration.Reset();
-
-            LoadConfiguration();
+            numericUpDownPingTimeoutMsec.Value = Configuration.DefPingTimeoutMsec[2];
+            numericUpDownTracerouteTimeoutMsec.Value = Configuration.DefTracerouteTimeoutMsec[2];
+            numericUpDownTracerouteMaxHops.Value = Configuration.DefTracerouteMaxHops[2];
+            checkBoxSendProxyCredential.Checked = false;
+            textBoxProxyUsername.Text = "";
+            textBoxProxyPassword.Text = "";
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
-
-        private void LoadConfiguration()
-        {
-            numericUpDownPingTimeoutMsec.Value = Configuration.PingTimeoutMsec;
-            numericUpDownTracerouteTimeoutMsec.Value = Configuration.TracerouteTimeoutMsec;
-            numericUpDownTracerouteMaxHops.Value = Configuration.TracerouteMaxHops;
-            checkBoxSendProxyCredential.Checked = Configuration.SendProxyCredential;
-            textBoxProxyUsername.Text = Configuration.ProxyUsername;
-            textBoxProxyPassword.Text = Configuration.ProxyPassword;
         }
     }
 }
