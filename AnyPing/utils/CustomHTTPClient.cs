@@ -12,19 +12,38 @@ namespace AnyPing.utils
 {
     internal class CustomHTTPClient
     {
-        public static HttpClient Create(int timeoutMsec)
-        {
-            HttpClientHandler handler = new HttpClientHandler();
+        private static HttpClientHandler handler;
+        private static HttpClient client;
 
+        public static HttpClient GetInstance()
+        {
+            NetworkCredential defaultProxyCredential;
             if (Configuration.SendProxyCredential)
             {
-                handler.DefaultProxyCredentials = new NetworkCredential(Configuration.ProxyUsername, Configuration.ProxyPassword);
+                defaultProxyCredential = new NetworkCredential(Configuration.ProxyUsername, Configuration.ProxyPassword);
+            }
+            else
+            {
+                defaultProxyCredential = null;
             }
 
-            HttpClient client = new HttpClient(handler)
+            TimeSpan timeout = TimeSpan.FromMilliseconds(Configuration.PingTimeoutMsec);
+
+            if (client is null
+                || defaultProxyCredential != handler.DefaultProxyCredentials
+                || timeout != client.Timeout)
             {
-                Timeout = TimeSpan.FromMilliseconds(timeoutMsec)
-            };
+                client?.Dispose();
+
+                handler = new HttpClientHandler()
+                {
+                    DefaultProxyCredentials = defaultProxyCredential,
+                };
+                client = new HttpClient(handler)
+                {
+                    Timeout = timeout,
+                };
+            }
 
             return client;
         }

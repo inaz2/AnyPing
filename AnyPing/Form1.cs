@@ -252,7 +252,7 @@ namespace AnyPing
 
             string resultText = await Task.Run(async () =>
             {
-                HttpClient client = CustomHTTPClient.Create(Configuration.PingTimeoutMsec);
+                HttpClient client = CustomHTTPClient.GetInstance();
                 Stopwatch timer = new Stopwatch();
                 timer.Start();
                 try
@@ -290,10 +290,6 @@ namespace AnyPing
                 {
                     timer.Stop();
                     return $"Failure ({ex.GetType().Name})";
-                }
-                finally
-                {
-                    client.Dispose();
                 }
             });
 
