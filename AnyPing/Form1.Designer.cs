@@ -68,7 +68,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(622, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(554, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -79,50 +79,50 @@
             this.バージョン情報VToolStripMenuItem,
             this.終了XToolStripMenuItem});
             this.ウィンドウWToolStripMenuItem.Name = "ウィンドウWToolStripMenuItem";
-            this.ウィンドウWToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.ウィンドウWToolStripMenuItem.Size = new System.Drawing.Size(83, 19);
             this.ウィンドウWToolStripMenuItem.Text = "ウィンドウ (&W)";
             // 
             // オプションOToolStripMenuItem
             // 
             this.オプションOToolStripMenuItem.Name = "オプションOToolStripMenuItem";
-            this.オプションOToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
+            this.オプションOToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.オプションOToolStripMenuItem.Text = "オプション (&O)...";
             this.オプションOToolStripMenuItem.Click += new System.EventHandler(this.オプションOToolStripMenuItem_Click);
             // 
             // バージョン情報VToolStripMenuItem
             // 
             this.バージョン情報VToolStripMenuItem.Name = "バージョン情報VToolStripMenuItem";
-            this.バージョン情報VToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
+            this.バージョン情報VToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.バージョン情報VToolStripMenuItem.Text = "バージョン情報 (&V)";
             this.バージョン情報VToolStripMenuItem.Click += new System.EventHandler(this.バージョン情報VToolStripMenuItem_Click);
             // 
             // 終了XToolStripMenuItem
             // 
             this.終了XToolStripMenuItem.Name = "終了XToolStripMenuItem";
-            this.終了XToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
+            this.終了XToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.終了XToolStripMenuItem.Text = "終了 (&X)";
             this.終了XToolStripMenuItem.Click += new System.EventHandler(this.終了XToolStripMenuItem_Click);
             // 
             // labelHost
             // 
             this.labelHost.AutoSize = true;
-            this.labelHost.Location = new System.Drawing.Point(30, 60);
+            this.labelHost.Location = new System.Drawing.Point(30, 41);
             this.labelHost.Name = "labelHost";
-            this.labelHost.Size = new System.Drawing.Size(40, 20);
+            this.labelHost.Size = new System.Drawing.Size(32, 15);
             this.labelHost.TabIndex = 1;
             this.labelHost.Text = "Host";
             // 
             // textBoxHostname
             // 
-            this.textBoxHostname.Location = new System.Drawing.Point(76, 58);
+            this.textBoxHostname.Location = new System.Drawing.Point(76, 39);
             this.textBoxHostname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxHostname.Name = "textBoxHostname";
-            this.textBoxHostname.Size = new System.Drawing.Size(424, 27);
+            this.textBoxHostname.Size = new System.Drawing.Size(357, 23);
             this.textBoxHostname.TabIndex = 2;
             // 
             // numericUpDownPort
             // 
-            this.numericUpDownPort.Location = new System.Drawing.Point(506, 59);
+            this.numericUpDownPort.Location = new System.Drawing.Point(439, 39);
             this.numericUpDownPort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDownPort.Maximum = new decimal(new int[] {
             65535,
@@ -130,14 +130,14 @@
             0,
             0});
             this.numericUpDownPort.Name = "numericUpDownPort";
-            this.numericUpDownPort.Size = new System.Drawing.Size(78, 27);
+            this.numericUpDownPort.Size = new System.Drawing.Size(78, 23);
             this.numericUpDownPort.TabIndex = 3;
             this.numericUpDownPort.Enter += new System.EventHandler(this.numericUpDownPort_Enter);
             this.numericUpDownPort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.numericUpDownPort_MouseUp);
             // 
             // buttonPing
             // 
-            this.buttonPing.Location = new System.Drawing.Point(76, 95);
+            this.buttonPing.Location = new System.Drawing.Point(76, 73);
             this.buttonPing.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonPing.Name = "buttonPing";
             this.buttonPing.Size = new System.Drawing.Size(100, 33);
@@ -149,10 +149,10 @@
             // checkBoxTraceroute
             // 
             this.checkBoxTraceroute.AutoSize = true;
-            this.checkBoxTraceroute.Location = new System.Drawing.Point(343, 100);
+            this.checkBoxTraceroute.Location = new System.Drawing.Point(317, 81);
             this.checkBoxTraceroute.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBoxTraceroute.Name = "checkBoxTraceroute";
-            this.checkBoxTraceroute.Size = new System.Drawing.Size(100, 24);
+            this.checkBoxTraceroute.Size = new System.Drawing.Size(81, 19);
             this.checkBoxTraceroute.TabIndex = 7;
             this.checkBoxTraceroute.Text = "Traceroute";
             this.checkBoxTraceroute.UseVisualStyleBackColor = true;
@@ -160,11 +160,11 @@
             // groupBoxResult
             // 
             this.groupBoxResult.Controls.Add(this.tableLayoutPanelResult);
-            this.groupBoxResult.Location = new System.Drawing.Point(20, 140);
+            this.groupBoxResult.Location = new System.Drawing.Point(20, 116);
             this.groupBoxResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBoxResult.Name = "groupBoxResult";
             this.groupBoxResult.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBoxResult.Size = new System.Drawing.Size(580, 640);
+            this.groupBoxResult.Size = new System.Drawing.Size(516, 544);
             this.groupBoxResult.TabIndex = 8;
             this.groupBoxResult.TabStop = false;
             this.groupBoxResult.Text = "Result";
@@ -186,7 +186,7 @@
             this.tableLayoutPanelResult.Controls.Add(this.textBoxResultTCP, 1, 2);
             this.tableLayoutPanelResult.Controls.Add(this.labelResultTraceroute, 0, 5);
             this.tableLayoutPanelResult.Controls.Add(this.textBoxResultTraceroute, 1, 5);
-            this.tableLayoutPanelResult.Location = new System.Drawing.Point(6, 26);
+            this.tableLayoutPanelResult.Location = new System.Drawing.Point(6, 24);
             this.tableLayoutPanelResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanelResult.Name = "tableLayoutPanelResult";
             this.tableLayoutPanelResult.RowCount = 6;
@@ -196,42 +196,42 @@
             this.tableLayoutPanelResult.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelResult.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelResult.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanelResult.Size = new System.Drawing.Size(568, 607);
+            this.tableLayoutPanelResult.Size = new System.Drawing.Size(501, 503);
             this.tableLayoutPanelResult.TabIndex = 0;
             // 
             // textBoxResultHTTPS
             // 
-            this.textBoxResultHTTPS.Location = new System.Drawing.Point(87, 144);
+            this.textBoxResultHTTPS.Location = new System.Drawing.Point(71, 128);
             this.textBoxResultHTTPS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxResultHTTPS.Name = "textBoxResultHTTPS";
-            this.textBoxResultHTTPS.Size = new System.Drawing.Size(472, 27);
+            this.textBoxResultHTTPS.Size = new System.Drawing.Size(420, 23);
             this.textBoxResultHTTPS.TabIndex = 9;
             // 
             // labelResultHTTPS
             // 
             this.labelResultHTTPS.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelResultHTTPS.AutoSize = true;
-            this.labelResultHTTPS.Location = new System.Drawing.Point(3, 147);
+            this.labelResultHTTPS.Location = new System.Drawing.Point(3, 132);
             this.labelResultHTTPS.Name = "labelResultHTTPS";
-            this.labelResultHTTPS.Size = new System.Drawing.Size(52, 20);
+            this.labelResultHTTPS.Size = new System.Drawing.Size(41, 15);
             this.labelResultHTTPS.TabIndex = 8;
             this.labelResultHTTPS.Text = "HTTPS";
             // 
             // textBoxResultHTTP
             // 
-            this.textBoxResultHTTP.Location = new System.Drawing.Point(87, 109);
+            this.textBoxResultHTTP.Location = new System.Drawing.Point(71, 97);
             this.textBoxResultHTTP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxResultHTTP.Name = "textBoxResultHTTP";
-            this.textBoxResultHTTP.Size = new System.Drawing.Size(472, 27);
+            this.textBoxResultHTTP.Size = new System.Drawing.Size(420, 23);
             this.textBoxResultHTTP.TabIndex = 7;
             // 
             // labelResultHTTP
             // 
             this.labelResultHTTP.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelResultHTTP.AutoSize = true;
-            this.labelResultHTTP.Location = new System.Drawing.Point(3, 112);
+            this.labelResultHTTP.Location = new System.Drawing.Point(3, 101);
             this.labelResultHTTP.Name = "labelResultHTTP";
-            this.labelResultHTTP.Size = new System.Drawing.Size(44, 20);
+            this.labelResultHTTP.Size = new System.Drawing.Size(35, 15);
             this.labelResultHTTP.TabIndex = 6;
             this.labelResultHTTP.Text = "HTTP";
             // 
@@ -239,63 +239,63 @@
             // 
             this.labelResultDNS.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelResultDNS.AutoSize = true;
-            this.labelResultDNS.Location = new System.Drawing.Point(3, 7);
+            this.labelResultDNS.Location = new System.Drawing.Point(3, 8);
             this.labelResultDNS.Name = "labelResultDNS";
-            this.labelResultDNS.Size = new System.Drawing.Size(39, 20);
+            this.labelResultDNS.Size = new System.Drawing.Size(30, 15);
             this.labelResultDNS.TabIndex = 0;
             this.labelResultDNS.Text = "DNS";
             // 
             // textBoxResultDNS
             // 
-            this.textBoxResultDNS.Location = new System.Drawing.Point(87, 4);
+            this.textBoxResultDNS.Location = new System.Drawing.Point(71, 4);
             this.textBoxResultDNS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxResultDNS.Name = "textBoxResultDNS";
-            this.textBoxResultDNS.Size = new System.Drawing.Size(472, 27);
+            this.textBoxResultDNS.Size = new System.Drawing.Size(420, 23);
             this.textBoxResultDNS.TabIndex = 1;
             // 
             // labelResultICMP
             // 
             this.labelResultICMP.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelResultICMP.AutoSize = true;
-            this.labelResultICMP.Location = new System.Drawing.Point(3, 42);
+            this.labelResultICMP.Location = new System.Drawing.Point(3, 39);
             this.labelResultICMP.Name = "labelResultICMP";
-            this.labelResultICMP.Size = new System.Drawing.Size(43, 20);
+            this.labelResultICMP.Size = new System.Drawing.Size(35, 15);
             this.labelResultICMP.TabIndex = 2;
             this.labelResultICMP.Text = "ICMP";
             // 
             // textBoxResultICMP
             // 
-            this.textBoxResultICMP.Location = new System.Drawing.Point(87, 39);
+            this.textBoxResultICMP.Location = new System.Drawing.Point(71, 35);
             this.textBoxResultICMP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxResultICMP.Name = "textBoxResultICMP";
-            this.textBoxResultICMP.Size = new System.Drawing.Size(472, 27);
+            this.textBoxResultICMP.Size = new System.Drawing.Size(420, 23);
             this.textBoxResultICMP.TabIndex = 3;
             // 
             // labelResultTCP
             // 
             this.labelResultTCP.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelResultTCP.AutoSize = true;
-            this.labelResultTCP.Location = new System.Drawing.Point(3, 77);
+            this.labelResultTCP.Location = new System.Drawing.Point(3, 70);
             this.labelResultTCP.Name = "labelResultTCP";
-            this.labelResultTCP.Size = new System.Drawing.Size(34, 20);
+            this.labelResultTCP.Size = new System.Drawing.Size(27, 15);
             this.labelResultTCP.TabIndex = 4;
             this.labelResultTCP.Text = "TCP";
             // 
             // textBoxResultTCP
             // 
-            this.textBoxResultTCP.Location = new System.Drawing.Point(87, 74);
+            this.textBoxResultTCP.Location = new System.Drawing.Point(71, 66);
             this.textBoxResultTCP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxResultTCP.Name = "textBoxResultTCP";
-            this.textBoxResultTCP.Size = new System.Drawing.Size(472, 27);
+            this.textBoxResultTCP.Size = new System.Drawing.Size(420, 23);
             this.textBoxResultTCP.TabIndex = 5;
             // 
             // labelResultTraceroute
             // 
             this.labelResultTraceroute.AutoSize = true;
-            this.labelResultTraceroute.Location = new System.Drawing.Point(3, 183);
+            this.labelResultTraceroute.Location = new System.Drawing.Point(3, 163);
             this.labelResultTraceroute.Margin = new System.Windows.Forms.Padding(3, 8, 3, 0);
             this.labelResultTraceroute.Name = "labelResultTraceroute";
-            this.labelResultTraceroute.Size = new System.Drawing.Size(78, 20);
+            this.labelResultTraceroute.Size = new System.Drawing.Size(62, 15);
             this.labelResultTraceroute.TabIndex = 10;
             this.labelResultTraceroute.Text = "Traceroute";
             // 
@@ -303,21 +303,21 @@
             // 
             this.textBoxResultTraceroute.AcceptsReturn = true;
             this.textBoxResultTraceroute.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxResultTraceroute.Location = new System.Drawing.Point(87, 179);
+            this.textBoxResultTraceroute.Location = new System.Drawing.Point(71, 159);
             this.textBoxResultTraceroute.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxResultTraceroute.Multiline = true;
             this.textBoxResultTraceroute.Name = "textBoxResultTraceroute";
             this.textBoxResultTraceroute.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxResultTraceroute.Size = new System.Drawing.Size(472, 424);
+            this.textBoxResultTraceroute.Size = new System.Drawing.Size(420, 337);
             this.textBoxResultTraceroute.TabIndex = 11;
             // 
             // checkBoxHTTP
             // 
             this.checkBoxHTTP.AutoSize = true;
-            this.checkBoxHTTP.Location = new System.Drawing.Point(191, 100);
+            this.checkBoxHTTP.Location = new System.Drawing.Point(191, 81);
             this.checkBoxHTTP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBoxHTTP.Name = "checkBoxHTTP";
-            this.checkBoxHTTP.Size = new System.Drawing.Size(66, 24);
+            this.checkBoxHTTP.Size = new System.Drawing.Size(54, 19);
             this.checkBoxHTTP.TabIndex = 5;
             this.checkBoxHTTP.Text = "HTTP";
             this.checkBoxHTTP.UseVisualStyleBackColor = true;
@@ -325,10 +325,10 @@
             // checkBoxHTTPS
             // 
             this.checkBoxHTTPS.AutoSize = true;
-            this.checkBoxHTTPS.Location = new System.Drawing.Point(263, 100);
+            this.checkBoxHTTPS.Location = new System.Drawing.Point(251, 81);
             this.checkBoxHTTPS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBoxHTTPS.Name = "checkBoxHTTPS";
-            this.checkBoxHTTPS.Size = new System.Drawing.Size(74, 24);
+            this.checkBoxHTTPS.Size = new System.Drawing.Size(60, 19);
             this.checkBoxHTTPS.TabIndex = 6;
             this.checkBoxHTTPS.Text = "HTTPS";
             this.checkBoxHTTPS.UseVisualStyleBackColor = true;
@@ -336,9 +336,9 @@
             // Form1
             // 
             this.AcceptButton = this.buttonPing;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 813);
+            this.ClientSize = new System.Drawing.Size(554, 681);
             this.Controls.Add(this.checkBoxHTTPS);
             this.Controls.Add(this.groupBoxResult);
             this.Controls.Add(this.checkBoxHTTP);
@@ -349,8 +349,10 @@
             this.Controls.Add(this.labelHost);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "AnyPing";
             this.Load += new System.EventHandler(this.Form1_Load);
