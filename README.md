@@ -2,7 +2,7 @@
 
 A tiny network diagnostic tool for Windows.
 
-![screenshot](screenshot-v1.4.1.0.png)
+![screenshot](screenshot-v1.4.2.0.png)
 
 
 ## System Requirements
