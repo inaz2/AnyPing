@@ -54,10 +54,15 @@
             this.textBoxResultTraceroute = new System.Windows.Forms.TextBox();
             this.checkBoxHTTP = new System.Windows.Forms.CheckBox();
             this.checkBoxHTTPS = new System.Windows.Forms.CheckBox();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPort)).BeginInit();
             this.groupBoxResult.SuspendLayout();
             this.tableLayoutPanelResult.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -68,7 +73,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(554, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(524, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -106,7 +111,7 @@
             // labelHost
             // 
             this.labelHost.AutoSize = true;
-            this.labelHost.Location = new System.Drawing.Point(30, 41);
+            this.labelHost.Location = new System.Drawing.Point(6, 21);
             this.labelHost.Name = "labelHost";
             this.labelHost.Size = new System.Drawing.Size(32, 15);
             this.labelHost.TabIndex = 1;
@@ -114,7 +119,7 @@
             // 
             // textBoxHostname
             // 
-            this.textBoxHostname.Location = new System.Drawing.Point(76, 39);
+            this.textBoxHostname.Location = new System.Drawing.Point(52, 19);
             this.textBoxHostname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxHostname.Name = "textBoxHostname";
             this.textBoxHostname.Size = new System.Drawing.Size(357, 23);
@@ -122,7 +127,7 @@
             // 
             // numericUpDownPort
             // 
-            this.numericUpDownPort.Location = new System.Drawing.Point(439, 39);
+            this.numericUpDownPort.Location = new System.Drawing.Point(415, 19);
             this.numericUpDownPort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDownPort.Maximum = new decimal(new int[] {
             65535,
@@ -137,7 +142,7 @@
             // 
             // buttonPing
             // 
-            this.buttonPing.Location = new System.Drawing.Point(76, 73);
+            this.buttonPing.Location = new System.Drawing.Point(52, 53);
             this.buttonPing.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonPing.Name = "buttonPing";
             this.buttonPing.Size = new System.Drawing.Size(100, 33);
@@ -149,7 +154,7 @@
             // checkBoxTraceroute
             // 
             this.checkBoxTraceroute.AutoSize = true;
-            this.checkBoxTraceroute.Location = new System.Drawing.Point(317, 81);
+            this.checkBoxTraceroute.Location = new System.Drawing.Point(293, 61);
             this.checkBoxTraceroute.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBoxTraceroute.Name = "checkBoxTraceroute";
             this.checkBoxTraceroute.Size = new System.Drawing.Size(81, 19);
@@ -160,11 +165,12 @@
             // groupBoxResult
             // 
             this.groupBoxResult.Controls.Add(this.tableLayoutPanelResult);
-            this.groupBoxResult.Location = new System.Drawing.Point(20, 116);
+            this.groupBoxResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxResult.Location = new System.Drawing.Point(0, 0);
             this.groupBoxResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBoxResult.Name = "groupBoxResult";
             this.groupBoxResult.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBoxResult.Size = new System.Drawing.Size(516, 544);
+            this.groupBoxResult.Size = new System.Drawing.Size(500, 517);
             this.groupBoxResult.TabIndex = 8;
             this.groupBoxResult.TabStop = false;
             this.groupBoxResult.Text = "Result";
@@ -186,7 +192,8 @@
             this.tableLayoutPanelResult.Controls.Add(this.textBoxResultTCP, 1, 2);
             this.tableLayoutPanelResult.Controls.Add(this.labelResultTraceroute, 0, 5);
             this.tableLayoutPanelResult.Controls.Add(this.textBoxResultTraceroute, 1, 5);
-            this.tableLayoutPanelResult.Location = new System.Drawing.Point(6, 24);
+            this.tableLayoutPanelResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelResult.Location = new System.Drawing.Point(3, 20);
             this.tableLayoutPanelResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanelResult.Name = "tableLayoutPanelResult";
             this.tableLayoutPanelResult.RowCount = 6;
@@ -196,14 +203,16 @@
             this.tableLayoutPanelResult.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelResult.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelResult.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanelResult.Size = new System.Drawing.Size(501, 503);
+            this.tableLayoutPanelResult.Size = new System.Drawing.Size(494, 493);
             this.tableLayoutPanelResult.TabIndex = 0;
             // 
             // textBoxResultHTTPS
             // 
+            this.textBoxResultHTTPS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxResultHTTPS.Location = new System.Drawing.Point(71, 128);
             this.textBoxResultHTTPS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxResultHTTPS.Name = "textBoxResultHTTPS";
+            this.textBoxResultHTTPS.ReadOnly = true;
             this.textBoxResultHTTPS.Size = new System.Drawing.Size(420, 23);
             this.textBoxResultHTTPS.TabIndex = 9;
             // 
@@ -219,9 +228,11 @@
             // 
             // textBoxResultHTTP
             // 
+            this.textBoxResultHTTP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxResultHTTP.Location = new System.Drawing.Point(71, 97);
             this.textBoxResultHTTP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxResultHTTP.Name = "textBoxResultHTTP";
+            this.textBoxResultHTTP.ReadOnly = true;
             this.textBoxResultHTTP.Size = new System.Drawing.Size(420, 23);
             this.textBoxResultHTTP.TabIndex = 7;
             // 
@@ -247,9 +258,11 @@
             // 
             // textBoxResultDNS
             // 
+            this.textBoxResultDNS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxResultDNS.Location = new System.Drawing.Point(71, 4);
             this.textBoxResultDNS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxResultDNS.Name = "textBoxResultDNS";
+            this.textBoxResultDNS.ReadOnly = true;
             this.textBoxResultDNS.Size = new System.Drawing.Size(420, 23);
             this.textBoxResultDNS.TabIndex = 1;
             // 
@@ -265,9 +278,11 @@
             // 
             // textBoxResultICMP
             // 
+            this.textBoxResultICMP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxResultICMP.Location = new System.Drawing.Point(71, 35);
             this.textBoxResultICMP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxResultICMP.Name = "textBoxResultICMP";
+            this.textBoxResultICMP.ReadOnly = true;
             this.textBoxResultICMP.Size = new System.Drawing.Size(420, 23);
             this.textBoxResultICMP.TabIndex = 3;
             // 
@@ -283,9 +298,11 @@
             // 
             // textBoxResultTCP
             // 
+            this.textBoxResultTCP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxResultTCP.Location = new System.Drawing.Point(71, 66);
             this.textBoxResultTCP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxResultTCP.Name = "textBoxResultTCP";
+            this.textBoxResultTCP.ReadOnly = true;
             this.textBoxResultTCP.Size = new System.Drawing.Size(420, 23);
             this.textBoxResultTCP.TabIndex = 5;
             // 
@@ -302,19 +319,21 @@
             // textBoxResultTraceroute
             // 
             this.textBoxResultTraceroute.AcceptsReturn = true;
+            this.textBoxResultTraceroute.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxResultTraceroute.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxResultTraceroute.Location = new System.Drawing.Point(71, 159);
             this.textBoxResultTraceroute.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxResultTraceroute.Multiline = true;
             this.textBoxResultTraceroute.Name = "textBoxResultTraceroute";
+            this.textBoxResultTraceroute.ReadOnly = true;
             this.textBoxResultTraceroute.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxResultTraceroute.Size = new System.Drawing.Size(420, 337);
+            this.textBoxResultTraceroute.Size = new System.Drawing.Size(420, 330);
             this.textBoxResultTraceroute.TabIndex = 11;
             // 
             // checkBoxHTTP
             // 
             this.checkBoxHTTP.AutoSize = true;
-            this.checkBoxHTTP.Location = new System.Drawing.Point(191, 81);
+            this.checkBoxHTTP.Location = new System.Drawing.Point(167, 61);
             this.checkBoxHTTP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBoxHTTP.Name = "checkBoxHTTP";
             this.checkBoxHTTP.Size = new System.Drawing.Size(54, 19);
@@ -325,7 +344,7 @@
             // checkBoxHTTPS
             // 
             this.checkBoxHTTPS.AutoSize = true;
-            this.checkBoxHTTPS.Location = new System.Drawing.Point(251, 81);
+            this.checkBoxHTTPS.Location = new System.Drawing.Point(227, 61);
             this.checkBoxHTTPS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBoxHTTPS.Name = "checkBoxHTTPS";
             this.checkBoxHTTPS.Size = new System.Drawing.Size(60, 19);
@@ -333,20 +352,37 @@
             this.checkBoxHTTPS.Text = "HTTPS";
             this.checkBoxHTTPS.UseVisualStyleBackColor = true;
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.IsSplitterFixed = true;
+            this.splitContainer1.Location = new System.Drawing.Point(12, 28);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.labelHost);
+            this.splitContainer1.Panel1.Controls.Add(this.checkBoxHTTPS);
+            this.splitContainer1.Panel1.Controls.Add(this.textBoxHostname);
+            this.splitContainer1.Panel1.Controls.Add(this.numericUpDownPort);
+            this.splitContainer1.Panel1.Controls.Add(this.checkBoxHTTP);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonPing);
+            this.splitContainer1.Panel1.Controls.Add(this.checkBoxTraceroute);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.groupBoxResult);
+            this.splitContainer1.Size = new System.Drawing.Size(500, 621);
+            this.splitContainer1.SplitterDistance = 100;
+            this.splitContainer1.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AcceptButton = this.buttonPing;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 681);
-            this.Controls.Add(this.checkBoxHTTPS);
-            this.Controls.Add(this.groupBoxResult);
-            this.Controls.Add(this.checkBoxHTTP);
-            this.Controls.Add(this.checkBoxTraceroute);
-            this.Controls.Add(this.buttonPing);
-            this.Controls.Add(this.numericUpDownPort);
-            this.Controls.Add(this.textBoxHostname);
-            this.Controls.Add(this.labelHost);
+            this.ClientSize = new System.Drawing.Size(524, 661);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -362,6 +398,11 @@
             this.groupBoxResult.ResumeLayout(false);
             this.tableLayoutPanelResult.ResumeLayout(false);
             this.tableLayoutPanelResult.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -395,6 +436,7 @@
         private System.Windows.Forms.TextBox textBoxResultHTTP;
         private System.Windows.Forms.Label labelResultHTTP;
         private System.Windows.Forms.ToolStripMenuItem オプションOToolStripMenuItem;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }
 
